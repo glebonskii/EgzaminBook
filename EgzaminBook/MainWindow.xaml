@@ -1,0 +1,141 @@
+﻿<Window x:Class="EgzaminBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EgzaminBook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="BorderBrush" Value="PaleVioletRed"/>
+            <Setter Property="Background" Value="Purple"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="UpperButtonGrid" Grid.ColumnSpan="10" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="OrderButton" Content="Orders" Click="OrderButton_Click"/>
+            <Button Grid.Column="1" Name="BookButton" Click="BookButton_Click">
+                <TextBlock Text="Music Albums"/>
+            </Button>
+            <Button Grid.Column="2" Name="CustomerButton" Content="Customers" Height="53" Margin="3,3,3,0" VerticalAlignment="Top" Click="CustomerButton_Click" />
+            <Button Grid.Column="3" Name="RegisteredCustomerButton" Click="RegisteredCustomerButton_Click">
+                <TextBlock Text="Registered Customers"/>
+            </Button>
+            <Button Grid.Column="4" Name="DiscountsButton" Content="Discounts" Click="DiscountsButton_Click"/>
+            <Button Grid.Column="5" Name="SalesButton" Content="Sales" Click="SalesButton_Click" />
+            <Button Grid.Column="6" Name="ReservesButton" Click="ReservesButton_Click">
+                <TextBlock Text="Reserved book"/>
+            </Button>
+            <Button Grid.Column="7" Name="NameButton" Content="Name" Click="NameButton_Click"/>
+            <Button Grid.Column="8" Name="GanresButton" Content="Ganres" Click="GanresButton_Click"/>
+            <Button Grid.Column="9" Name="AuthorsButton" Content="Authors" Click="AuthorsButton_Click"/>
+        </Grid>
+        <StackPanel Name="OrderButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowOrderButton" Content="Show all order" Margin="3" Background="LightSkyBlue" Click="ShowOrderButton_Click"/>
+            <Button Name="CreateOrderButton" Content="Create new order" Margin="3" Background="LightSkyBlue" Click="CreateOrderButton_Click"/>
+            <Button Name="EditOrderButton2" Content="Edit selected order" Margin="3" Background="LightSkyBlue" Click="EditOrderButton_Click"/>
+            <Button Name="RemoveOrderButton" Content="Remove selected order" Margin="3" Background="LightSkyBlue" Click="RemoveOrderButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="BookButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowBookButton" Content="Show all book" Margin="3" Background="YellowGreen" Click="ShowBookButton_Click"/>
+            <Button Name="AddNewBookButton" Content="Add new book" Margin="3" Background="YellowGreen" Click="AddNewBookButton_Click"/>
+            <Button Name="EditSelectedBookButton" Content="Edit selected book" Margin="3" Background="YellowGreen" Click="EditSelectedBookButton_Click"/>
+            <Button Name="RemoveSelectedAlbumsButton" Content="Remove selected books" Margin="3" Background="YellowGreen" Click="RemoveSelectedBookButton_Click"/>
+            <Button Name="WritteOffSelectedAlbumButton" Content="Writte off selected books" Margin="3" Background="YellowGreen" Click="WritteOffSelectedBookButton_Click"/>
+            <Button Name="AddAlbumToSaleButton" Content="Add books to sale" Margin="3" Background="YellowGreen" Click="AddBookToSaleButton_Click"/>
+            <Button Name="ReserveAlbumButton" Content="Reserve books" Margin="3" Background="YellowGreen" Click="ReserveBookButton_Click"/>
+            <Button Name="SearchAlbumByNameButton" Content="Search books by name" Margin="3" Background="YellowGreen" Click="SearchBookByNameButton_Click"/>
+            <Button Name="SearchAlbumByPublisherButton" Content="Search books by publisher" Margin="3" Background="YellowGreen" Click="SearchBookByPublisherButton_Click"/>
+            <Button Name="SearchAlbumByGenreButton" Content="Search books by ganre" Margin="3" Background="YellowGreen" Click="SearchBookByGanreButton_Click"/>
+            <Button Name="ShowNewMusicButton" Content="Show new books" Margin="3" Background="YellowGreen" Click="ShowNewBookButton_Click"/>
+            <Button Name="ShowBestSellingMusicAlbumsButton" Content="Show best-selling books" Margin="3" Background="YellowGreen" Click="ShowBestSellingBookButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="CustomerButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowCustomersButton" Content="Show all customers" Margin="3" Background="Coral" Click="ShowCustomersButton_Click"/>
+            <Button Name="AddCustomersButton" Content="Add new customer" Margin="3" Background="Coral" Click="AddCustomersButton_Click"/>
+            <Button Name="EditCustomersButton" Content="Edit selected customer" Margin="3" Background="Coral" Click="EditCustomersButton_Click"/>
+            <Button Name="RemoveCustomersButton" Content="Remove selected customer" Margin="3" Background="Coral" Click="RemoveCustomersButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="RegisteredCustomerButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowRegisteredCustomersButton" Content="Show all registered customers" Margin="3" Background="Coral" Click="ShowRegisteredCustomersButton_Click"/>
+            <Button Name="AddRegisteredCustomersButton" Content="Add new registered customers" Margin="3" Background="Coral" Click="AddRegisteredCustomersButton_Click"/>
+            <Button Name="EditRegisteredCustomersButton" Content="Edit selected registered customers" Margin="3" Background="Coral" Click="EditRegisteredCustomersButton_Click"/>
+            <Button Name="RemoveRegisteredCustomersButton" Content="Remove selected registered customers" Margin="3" Background="Coral" Click="RemoveRegisteredCustomersButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="DiscountButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowDiscountButton" Content="Show all discounts" Margin="3" Background="Red" Click="ShowDiscountButton_Click"/>
+            <Button Name="AddDiscountButton" Content="Add new discount" Margin="3" Background="Red" Click="AddDiscountButton_Click"/>
+            <Button Name="EditDiscountButton" Content="Edit selected discount" Margin="3" Background="Red" Click="EditDiscountButton_Click"/>
+            <Button Name="RemoveDiscountButton" Content="Remove selected discount" Margin="3" Background="Red" Click="RemoveDiscountButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="SaleButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowSaleButton" Content="Show all sales" Margin="3" Background="Green" Click="ShowSaleButton_Click"/>
+            <Button Name="AddSaleButton" Content="Add new sale" Margin="3" Background="Green" Click="AddSaleButton_Click"/>
+            <Button Name="EditSaleButton" Content="Edit selected sale" Margin="3" Background="Green" Click="EditSaleButton_Click"/>
+            <Button Name="RemoveSaleButton" Content="Remove selected sale" Margin="3" Background="Green" Click="RemoveSaleButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="ReservedButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowReservedBookButton" Content="Show all reserved books" Margin="3" Background="WhiteSmoke" Click="ShowReservedBookButton_Click"/>
+            <Button Name="AddReservedBookButton" Content="Add new reserved books" Margin="3" Background="WhiteSmoke" Click="AddReservedBookButton_Click"/>
+            <Button Name="EditReservedBookButton" Content="Edit selected reserved books" Margin="3" Background="WhiteSmoke" Click="EditReservedBookButton_Click"/>
+            <Button Name="RemoveReservedBookButton" Content="Remove selected reserved books" Margin="3" Background="WhiteSmoke" Click="RemoveReservedBookButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="NameButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowNameButton" Content="Show all names" Margin="3" Background="Orchid" Click="ShowNameButton_Click"/>
+            <Button Name="AddNameButton" Content="Add new names" Margin="3" Background="Orchid" Click="AddNameButton_Click"/>
+            <Button Name="EditNameButton" Content="Edit selected names" Margin="3" Background="Orchid" Click="EditNameButton_Click"/>
+            <Button Name="RemoveNameButton" Content="Remove selected names" Margin="3" Background="Orchid" Click="RemoveNameButton_Click"/>
+            <Button Name="ShowTopNameButton" Content="Show top names" Margin="3" Background="Orchid" Click="ShowTopNameButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="GanresButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowGanresButton" Content="Show all ganres" Margin="3" Background="PeachPuff" Click="ShowGanresButton_Click"/>
+            <Button Name="AddGanresButton" Content="Add new ganre" Margin="3" Background="PeachPuff" Click="AddGanresButton_Click"/>
+            <Button Name="EditGanresButton" Content="Edit selected ganre" Margin="3" Background="PeachPuff" Click="EditGanresButton_Click"/>
+            <Button Name="RemoveGanresButton" Content="Remove selected ganre" Margin="3" Background="PeachPuff" Click="RemoveGanresButton_Click"/>
+            <Button Name="TopGanresPerDayButton" Content="Show top ganres per day" Margin="3" Background="PeachPuff" Click="TopGanresPerDayButton_Click"/>
+            <Button Name="TopGanresPerWeekButton" Content="Show top ganres per week" Margin="3" Background="PeachPuff" Click="TopGanresPerWeekButton_Click"/>
+            <Button Name="TopGanresPerMonthButton" Content="Show top ganres per month" Margin="3" Background="PeachPuff" Click="TopGanresPerMonthButton_Click"/>
+            <Button Name="TopGanresPerYearButton" Content="Show top ganres per year" Margin="3" Background="PeachPuff" Click="TopGanresPerYearButton_Click"/>
+        </StackPanel>
+        <StackPanel Name="AuthorsButtonPanel" Grid.Row="1" Grid.RowSpan="7" Visibility="Hidden">
+            <Button Name="ShowAuthorsButton" Content="Show all authors" Margin="3" Background="ForestGreen" Click="ShowAuthorsButton_Click"/>
+            <Button Name="AddAuthorsButton" Content="Add new authors" Margin="3" Background="ForestGreen" Click="AddAuthorsButton_Click"/>
+            <Button Name="EditAuthorsButton" Content="Edit selected authors" Margin="3" Background="ForestGreen" Click="EditAuthorsButton_Click"/>
+            <Button Name="RemoveAuthorsButton" Content="Remove selected authors" Margin="3" Background="ForestGreen" Click="RemoveAuthorsButton_Click"/>
+        </StackPanel>
+        <DataGrid Name="RezultGrid" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="7" Width="Auto" Height="Auto" ItemsSource="{Binding}" AutoGenerateColumns="True"/>
+
+    </Grid>
+</Window>
